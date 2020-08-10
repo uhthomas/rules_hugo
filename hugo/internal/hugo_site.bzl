@@ -97,6 +97,9 @@ def _hugo_site_impl(ctx):
         inputs = hugo_inputs,
         outputs = hugo_outputs,
         tools = [hugo],
+        execution_requirements = {
+            "no-sandbox": "1",
+        },
     )
 
     files = depset([hugo_outputdir])
